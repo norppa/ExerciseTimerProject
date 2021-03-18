@@ -1,9 +1,8 @@
-console.log('hello there!')
+var number = 0
 
-const shouter = () => {
-    console.log('hello again!')
+const incrementer = () => {
+    number = number + 1
+    console.log(number)
 }
 
-shouter()
-
-setInterval(shouter, 1000)
+setInterval(incrementer, 1000)
