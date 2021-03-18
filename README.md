@@ -1,6 +1,6 @@
 This is a step-by-step javascript project to build an exercise timer.
 
-## Block 1
+## Block 1 - Stopwatch
 
 ### Stage 1 - Init
 In this stage we create the files needed in this project and make sure they are connected.
@@ -70,3 +70,34 @@ Let's add a button to start the timer.
 - Set the button's _onclick_ parameter to point to the startTimer function.
 - Add an initial value (if you haven't already done so) to the timer div, so that it is not empty when the page is first loaded.
 - When you reload the page, it should show the initial value and the button you created. When you press the button, the timer should start. Make sure the initial value is replaced with the 00:00 immediately when the button is pressed and not after the first second.
+
+### Stage 8 - Stop it!
+It sure would be nice if we could also stop that timer.
+
+- Create a new function stopTimer that will stop the timer and reset the default value number value
+- Add a stop button to the web page. Make sure it's in the same row as the start button.
+- Now if you reload the page and try this out, you notice that the timer starts from where it stopped. Fix your code so that the timer starts from zero every time it is started.
+- Optional: there still exists a bug in the code. Can you find it and fix it?
+
+### Stage 9 - Combine functionality
+The bug mentioned in the previous stage is the fact that if you start the timer and press "start" again, it will create another timer that messes up our program, since now there are two timers running and they both increment the same variable. We will fix this bug by making sure you can not press start when the timer is running. 
+
+- Create a new _boolean_ variable called timerIsRunning and set it to false.
+- Update your startTimer function so that it sets timerIsRunning to true
+- Update your stopTimer function so that it sets timerIsRunning to false
+- Create a new function that checks if timer is running and executes startTimer if it is not and stopTimer if it is.
+- Change your start button's onclick to point to the new function.
+- Since the start button now starts and stops the timer, we don't need the stop button. Remove the stop button and all the code that is no more needed.
+- Make sure that the startTimer and stopTimer update the start button text accordingly.
+
+### Stage 10 - Add pause
+Sometimes it would be handy to pause the timer. Let's doe it!
+
+- Create functions pauseTimer and unPauseTimer that do what they say, but do not change the incrementing counter or the web page text.
+- As in stage 9, create a boolean variable timerIsPaused and set it initially to false. Update the variable in pauseTimer and unPauseTimer accordingly.
+- Create a function that checks if timer is paused or unpaused and executes pauseTimer or unPauseTimer accordingly. 
+- Add a pause/unpause button to your web page. Get it to a constant and set its onclick to the pause/unpause function you created. 
+- Change the button's text appropriately as with start/stop button.
+- When your reload the page you should see the start/stop button working as before, but next to it should be a pause/resume button that, well, pauses or resumes the timer.
+- There is still a problem in our user interface that we fix in stage 11. Can you spot it?
+
