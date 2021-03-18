@@ -48,3 +48,16 @@ In this stage we style the element a bit further.
 - optionally you can also reset the background color and adjust spacing
 - when you reload the page, everything should be centered, the running numbers should be below the header and everything should look _nice_!
 
+### Stage 6 - Seconds into minutes
+In this stage we format our running seconds to a more user-friendly format
+
+- create a new function that will (eventually) format the seconds to a _string_ in the form of mm:ss. The function should take one parameter, the number of seconds that is to be formatted. The function will _return_ the formatted _string_.
+    - inside the functin, create a new constant for the number of full minutes in the given number of seconds.
+    - also create a new constant with the number of remaining seconds after full minutes are taken into account.
+    - return a _concatenated_ string that combines the minutes, a colon and the seconds.
+- update your incrementer function to use the result of the formatter as the innerHTML of the div instead of the unformatted number.
+- when you reload the page, the numbers should be in correct time format, almost
+- the seconds should have always two numbers (as in 01 instead of just 1)
+- update your formatter function to check if the number is less than 10 and to concatenate a zero in front of the seconds if that is the case. You can do the same to the minutes if you wish.
+- when you reload the page, all the running numbers should be formatted as desired
+
