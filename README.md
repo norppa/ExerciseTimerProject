@@ -61,3 +61,12 @@ In this stage we format our running seconds to a more user-friendly format
 - update your formatter function to check if the number is less than 10 and to concatenate a zero in front of the seconds if that is the case. You can do the same to the minutes if you wish.
 - when you reload the page, all the running numbers should be formatted as desired
 
+### Stage 7 - Interactivity
+Let's add a button to start the timer.
+
+- At the moment the timer starts automatically. Create a function startTimer and update your code so that the timer starts when the function is executed.
+- Add a _button_ to the web page that will start the timer. Give it a unique id and a descriptive text.
+- In the script file, store the button element you created in a constant.
+- Set the button's _onclick_ parameter to point to the startTimer function.
+- Add an initial value (if you haven't already done so) to the timer div, so that it is not empty when the page is first loaded.
+- When you reload the page, it should show the initial value and the button you created. When you press the button, the timer should start. Make sure the initial value is replaced with the 00:00 immediately when the button is pressed and not after the first second.

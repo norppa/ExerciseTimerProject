@@ -1,6 +1,6 @@
 var number = 0
 const numberDiv = document.getElementById('number')
-console.log(numberDiv)
+const startBtn = document.getElementById('start')
 
 const incrementer = () => {
     number = number + 1
@@ -19,4 +19,10 @@ const formatter = (number) => {
     return minutes + ':' + seconds
 }
 
-setInterval(incrementer, 1000)
+const startTimer = () => {
+    numberDiv.innerHTML = formatter(number)
+    setInterval(incrementer, 1000)
+}
+
+startBtn.onclick = startTimer
+
