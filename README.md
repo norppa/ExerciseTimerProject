@@ -1,0 +1,1 @@
+This is a step-by-step javascript project to build an exercise timer. 
