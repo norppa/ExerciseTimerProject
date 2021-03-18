@@ -1,5 +1,5 @@
 body {
-    background-color: #B3AF8F;
+    background-color: #ede0e0;
     font-size: large;
     display: flex;
     flex-direction: column;
@@ -11,6 +11,11 @@ h1 {
     font-size: 40pt;
 }
 
-#number {
-    font-size: 25pt;
+#timeDisplay {
+    font-size: 30pt;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 20pt;
 }

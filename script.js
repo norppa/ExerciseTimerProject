@@ -1,15 +1,11 @@
 var time, timer
 var timerIsRunning = false, timerIsPaused = false
-const numberDiv = document.getElementById('number')
+
+const timeDisplay = document.getElementById('timeDisplay')
 const startBtn = document.getElementById('start')
 const pauseBtn = document.getElementById('pause')
 
-const incrementer = () => {
-    time = time + 1
-    numberDiv.innerHTML = formatter(time)
-}
-
-const formatter = (number) => {
+const formatTime = (number) => {
     var minutes = Math.floor(number / 60)
     var seconds = number % 60
     if (minutes < 10) {
@@ -21,22 +17,35 @@ const formatter = (number) => {
     return minutes + ':' + seconds
 }
 
+const setTimeDisplay = (time) => {
+    timeDisplay.innerHTML = formatTime(time)
+}
+
+const incrementTime = () => {
+    time = time + 1
+    setTimeDisplay(time)
+}
+
 const startTimer = () => {
     time = 0
-    timer = setInterval(incrementer, 1000)
+    timer = setInterval(incrementTime, 1000)
     timerIsRunning = true
-    numberDiv.innerHTML = formatter(time)
+    setTimeDisplay(time)
     startBtn.innerHTML = 'STOP'
+    pauseBtn.disabled = false
 }
 
 const stopTimer = () => {
     clearInterval(timer)
     timerIsRunning = false
-    numberDiv.innerHTML = '--:--'
+    timeDisplay.innerHTML = '--:--'
     startBtn.innerHTML = 'START'
+    pauseBtn.innerHTML = 'PAUSE'
+    pauseBtn.disabled = true
+    timerIsPaused = false
 }
 
-const startStopTimer = () => {
+const startOrStopTimer = () => {
     if (timerIsRunning) {
         stopTimer()
     } else {
@@ -51,12 +60,12 @@ const pauseTimer = () => {
 }
 
 const resumeTimer = () => {
-    timer = setInterval(incrementer, 1000)
+    timer = setInterval(incrementTime, 1000)
     timerIsPaused = false
     pauseBtn.innerHTML = 'PAUSE'
 }
 
-const pauseResumeTimer = () => {
+const pauseOrResumeTimer = () => {
     if (timerIsPaused) {
         resumeTimer()
     } else {
@@ -64,6 +73,7 @@ const pauseResumeTimer = () => {
     }
 }
 
-startBtn.onclick = startStopTimer
-pauseBtn.onclick = pauseResumeTimer
+startBtn.onclick = startOrStopTimer
+pauseBtn.onclick = pauseOrResumeTimer
+pauseBtn.disabled = true
 
