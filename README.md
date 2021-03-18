@@ -38,3 +38,13 @@ In this stage we will make the console logs visible in the web page
 - when you reload the page, the numbers should change in the web page.
 - clean your code: remove unnecessary console logs and other code that is no longer needed.
 
+### Stage 5 - Add some style with Flexbox
+In this stage we style the element a bit further.
+
+- in the style file, set your web page body to use flexbox _display_ style.
+- set the _flex-direction_ to be column so all elements are on top of each other.
+- set the _align-items_ to be center so everything is nice and centered.
+- change the font families, sizes, and colours to your liking
+- optionally you can also reset the background color and adjust spacing
+- when you reload the page, everything should be centered, the running numbers should be below the header and everything should look _nice_!
+
