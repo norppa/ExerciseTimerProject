@@ -150,3 +150,25 @@ Our exercise timer needs to go through multiple time spans, so let's add some mo
 - To finish the execution, add a condition that checks if the index is big enough and if it is, clear the interval and print a finishing message to the console.
 - When you reload the page the console should log the numbers running down from each of the times in your times list to one, and then the finishing message.
 - Clean up your code: remove unnecessary log messages and refactor if needed.
+
+### Stage 2.4 - More complex data structure
+Using just a simple list to store all our times would work, but it will become more confusing as the complexity level increases. Let's create a more descriptive data structure for our project.
+
+- Replace the times in your times list with _JSON objects_ that have attributes 'work' and 'rest', with both having time (Number) values attached to them.
+- Log the list to the console to see how it is displayed.
+- Update your initial time to the work value of the first element in the times list.
+- Now our timer will be either in the state work or rest (while running). Create a new String variable 'state' that will store the current state.
+- Next update your tick function: when timer reaches zero
+    - if we are in work state, switch to rest state and set time to the rest value.
+    - if we are in rest state, increase the index by one, set state to work and set time to the next work value.
+    - if index is out of range of our times list, finish the execution
+- To clarify the flow of the program, draw a picture! To paper. With a pen.
+- Add log messages telling what state we are in every time the state changes.
+
+### Stage 2.5 - Refactor
+Our project is getting a bit messy. Let's refactor by creating a few well named functions that handle logical action blocks.
+
+- Create a 'finish' function that handles ending the execution. Move all the code that is executed on finish to this function.
+- The tick function handles incrementing the time by one. When the time reaches zero, the program always changes state, either to work, rest or finished state. Separate the state change logic to its own function.
+- Remember to make sure that the program stops when the finish function is executed, and nothing is printed after that.
+- Create a new file called constants.js to the same folder as the rest of the files. We will use this file to store constants. In this case we have our times table, that is just declared and not changed at any point. It is 'external' information (we will make it user-defined later, but at this point it is just a hard-coded list.) Move the times list to the constants file and add that file to our html file so it will be included in our script.
