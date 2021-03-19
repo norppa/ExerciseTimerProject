@@ -130,8 +130,11 @@ Our Block One is pretty much done. What is left is tweaking the outlook of the u
 ### Stage 2.1 - Init
 We will start the second block again by initializing our project. This stage is identical to previous stage 1. Repetitio est matre studiorum. Let's add the styles from 1.5 so that our project skeleton uses centered column layout.
 
-## Stage 2.2 - Data Structure
-The Exercise Timer will use more complex system of counting time than just adding seconds. For this we need a suitable data structure.
+## Stage 2.2 - Super Simple Timer
+Let's start by building an extremely simple timer that counts down from 10 to zero and then stops, logging everything to console.
 
-- In the script file, create a _list_ that holds five _JSON objects_. Each object should have two attributes: work and rest, and each should have a number value that will be time in seconds.
-- Log the creted object to the console and see how list and JSON object are represented in the console.
+- Create a new variable 'time' and set it to 10
+- Create a new function that willl be executed every second. That function should reduce the time by one and log the result to the console.
+- Set a new interval that executes the function every second.
+- Add a condition to the function that checks if the time is zero and if so, clears the interval and logs a message to the console.
+- Your app should now log numbers from 10 to 0 to console, followed by a message.
