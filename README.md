@@ -172,3 +172,12 @@ Our project is getting a bit messy. Let's refactor by creating a few well named 
 - The tick function handles incrementing the time by one. When the time reaches zero, the program always changes state, either to work, rest or finished state. Separate the state change logic to its own function.
 - Remember to make sure that the program stops when the finish function is executed, and nothing is printed after that.
 - Create a new file called constants.js to the same folder as the rest of the files. We will use this file to store constants. In this case we have our times table, that is just declared and not changed at any point. It is 'external' information (we will make it user-defined later, but at this point it is just a hard-coded list.) Move the times list to the constants file and add that file to our html file so it will be included in our script.
+
+### Stage 2.6 - User interface
+Our timer works as desired! But the user interface is a bit lacking. Next we will fix that.
+
+- First we need to format the time again to a user-friendly string. Create it so that it will take one parameter, time in seconds, and returns the formatted string.
+- Next, add a div element to the html that will hold our time string. Give it an id and initial value. Get that element to a constant in our code, and update the innerHTML every time the time changes.
+- Do the same for the state so that the user knows if they should work or rest.
+- Since we have two divs (at least) that we want to update, and we know that every time we want to update time, we use the time formatter and update time div's innerHTML, and every time we want to update state, we update state div's innerHTML, we should construct a function that does this. Create an 'update' function that takes one parameter, element (that will be either 'time' or 'state'), and construct above logic into that function. Then use that function to update the time and state in your code.
+- When you run your app, it should run through all the states in your times list and end up with 'finished' and '00:00' on screen.
