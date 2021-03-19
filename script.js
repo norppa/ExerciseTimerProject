@@ -1,11 +1,21 @@
-console.log('exercise timer')
+const times = [2, 3, 4, 3, 2]
+var index = 0
 
-const exercise = [
-    { work: 20, rest: 10},
-    { work: 20, rest: 10},
-    { work: 20, rest: 10},
-    { work: 20, rest: 10},
-    { work: 20, rest: 10}
-]
+var time = times[index]
 
-console.log(exercise)
+console.log(time)
+const tick = () => {
+    time = time - 1
+    if (time === 0) {
+        index = index + 1    
+        if (index === times.length) {
+            clearInterval(timer)
+            console.log('Finished!')
+            return
+        } else {
+            time = times[index]
+        }
+    }
+    console.log(time)
+}
+const timer = setInterval(tick, 1000)

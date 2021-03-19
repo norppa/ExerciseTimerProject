@@ -130,8 +130,23 @@ Our Block One is pretty much done. What is left is tweaking the outlook of the u
 ### Stage 2.1 - Init
 We will start the second block again by initializing our project. This stage is identical to previous stage 1. Repetitio est matre studiorum. Let's add the styles from 1.5 so that our project skeleton uses centered column layout.
 
-## Stage 2.2 - Data Structure
-The Exercise Timer will use more complex system of counting time than just adding seconds. For this we need a suitable data structure.
+### Stage 2.2 - Super Simple Timer
+Let's start by building an extremely simple timer that counts down from 10 to zero and then stops, logging everything to console.
 
-- In the script file, create a _list_ that holds five _JSON objects_. Each object should have two attributes: work and rest, and each should have a number value that will be time in seconds.
-- Log the creted object to the console and see how list and JSON object are represented in the console.
+- Create a new variable 'time' and set it to 10
+- Create a new function that willl be executed every second. That function should reduce the time by one and log the result to the console.
+- Set a new interval that executes the function every second.
+- Add a condition to the function that checks if the time is zero and if so, clears the interval and logs a message to the console.
+- Your app should now log numbers from 10 to 0 to console, followed by a message.
+
+### Stage 2.3 - Repeated Timer
+Our exercise timer needs to go through multiple time spans, so let's add some more times to our simple timer.
+
+- Create a new _list_ constant 'times' and store there five values.
+- Create a new variable 'index' and set it to 0.
+- Log to the console the first value of the list using the index variable.
+- Update your code so that instead of setting your time to 10, set it to the first item in the times list.
+- Update your interval method so that whenever the timer reaches zero, instead of finishing, it moves to the next item in the list by increasing the index by one and setting the time to be the number in the list to where the index points to.
+- To finish the execution, add a condition that checks if the index is big enough and if it is, clear the interval and print a finishing message to the console.
+- When you reload the page the console should log the numbers running down from each of the times in your times list to one, and then the finishing message.
+- Clean up your code: remove unnecessary log messages and refactor if needed.
