@@ -123,3 +123,15 @@ Our Block One is pretty much done. What is left is tweaking the outlook of the u
 - When you are happy with the results, it's time to _refactor_ our code. This means cleaning up, rearranging so that it is logical to read, renaming poorly named variables and overall making it neat.
 - Also remove all possible console loggings that are there to help you develop and debug. Check that when you use the app, there are no warnings or errors in the console. If there are, fix them.
 - Do a final check of your product. Does everything still work as supposed after you shuffled everything around? If so, congrats, you have finished the first block.
+
+
+## Block 2 - Exercise Timer
+
+### Stage 2.1 - Init
+We will start the second block again by initializing our project. This stage is identical to previous stage 1. Repetitio est matre studiorum. Let's add the styles from 1.5 so that our project skeleton uses centered column layout.
+
+## Stage 2.2 - Data Structure
+The Exercise Timer will use more complex system of counting time than just adding seconds. For this we need a suitable data structure.
+
+- In the script file, create a _list_ that holds five _JSON objects_. Each object should have two attributes: work and rest, and each should have a number value that will be time in seconds.
+- Log the creted object to the console and see how list and JSON object are represented in the console.

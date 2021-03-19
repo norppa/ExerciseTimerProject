@@ -1,21 +1,6 @@
 body {
-    background-color: #ede0e0;
-    font-size: large;
+    background-color: #a7a7a7;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-h1 {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 40pt;
-}
-
-#timeDisplay {
-    font-size: 30pt;
-    margin-bottom: 20px;
-}
-
-button {
-    font-size: 20pt;
 }
