@@ -181,3 +181,13 @@ Our timer works as desired! But the user interface is a bit lacking. Next we wil
 - Do the same for the state so that the user knows if they should work or rest.
 - Since we have two divs (at least) that we want to update, and we know that every time we want to update time, we use the time formatter and update time div's innerHTML, and every time we want to update state, we update state div's innerHTML, we should construct a function that does this. Create an 'update' function that takes one parameter, element (that will be either 'time' or 'state'), and construct above logic into that function. Then use that function to update the time and state in your code.
 - When you run your app, it should run through all the states in your times list and end up with 'finished' and '00:00' on screen.
+
+### Stage 2.7 - Take control
+Time to add those buttons like we did before.
+
+- This time, start with the visual side. Add two buttons side by side. Remember to disable the pause button.
+- Add state variables (isRunning and isPaused) and set appropriate initial values for them.
+- Create handle functions for our buttons, that decide what to do depending on the state of our app. You can use placeholder comments to indicate what the function should actually do.
+- Create startTimer and stopTimer function and set the click handler to use these.
+- Create also pauseTimer and resumeTimer functions and set click handler to use these.
+- When you run the app, you should be able to control the flow using start/stop and pause/resume.
