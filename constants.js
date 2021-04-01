@@ -1,7 +1,7 @@
-const times = [
-    { work: 3, rest: 2},
-    { work: 3, rest: 2},
-    { work: 3, rest: 2}
+const exercises = [
+    { name: 'One', work: 3, rest: 2},
+    { name: 'Two', work: 3, rest: 2},
+    { name: 'Three', work: 3, rest: 2}
 ]
 
 const audio = {

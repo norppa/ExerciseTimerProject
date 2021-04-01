@@ -16,13 +16,14 @@ const changeState = () => {
     } else {
         state = 'work'
         index = index + 1
-        if (index === times.length) {
+        update('exercise')
+        if (index === exercises.length - 1) {
             audio.applause.play()
             return stopTimer()
         }
         audio.workBell.play()
     }
-    time = times[index][state]
+    time = exercises[index][state]
     update('state')
 }
 
@@ -40,6 +41,8 @@ const update = (element) => {
         document.getElementById('timeDisplay').innerHTML = timeFormatter(time)
     } else if (element === 'state') {
         document.getElementById('stateDisplay').innerHTML = state
+    } else if (element === 'exercise') {
+        document.getElementById('exerciseDisplay').innerHTML = exercises[index].name
     }
 }
 
@@ -49,14 +52,16 @@ const handlePauseResumeClick = () => isPaused ? resumeTimer() : pauseTimer()
 
 const startTimer = () => {
     index = 0
-    time = times[index].work
+    time = exercises[index].work
     state = 'work'
     update('time')
     update('state')
+    update('exercise')
     timer = setInterval(tick, 1000)
     isRunning = true
     startStopBtn.innerHTML = 'STOP'
     pauseResumeBtn.disabled = false
+    audio.workBell.play()
 }
 
 const stopTimer = () => {

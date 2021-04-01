@@ -199,3 +199,12 @@ For our timer to be efficient, it needs to have sound alerts.
 - Add audio object to our constants file, and in it add three sound objects that correspond to the sound files.
 - Update your code so that the appropriate sound is played every time the state changes.
 - When you run your code, you should hear the sound effect every time the app switches to work state, rest state or finishes.
+
+### Stage 2.9 - Exercise Information
+If you are doing longer workout, it'd be handy to know what the current exercise is and what is coming next.
+
+- Update the times list so that every object in it has a name.
+- Times is not very descriptive name anymore. Let's call the whole list 'exercises'
+- Add a div to the html file that will hold the name of the current exercise.
+- Whenever the exercise changes, update the exercise div's contents.
+- When you run the app, you should always see which exercise is the current one.
