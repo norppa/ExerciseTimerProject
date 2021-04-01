@@ -191,3 +191,11 @@ Time to add those buttons like we did before.
 - Create startTimer and stopTimer function and set the click handler to use these.
 - Create also pauseTimer and resumeTimer functions and set click handler to use these.
 - When you run the app, you should be able to control the flow using start/stop and pause/resume.
+
+### Stage 2.8 - Sound
+For our timer to be efficient, it needs to have sound alerts.
+
+- Create a new folder for our sound clips and copy there three sound clips: one for the start of the work phase, one for the start of the rest phase and one for the end of the exercise.
+- Add audio object to our constants file, and in it add three sound objects that correspond to the sound files.
+- Update your code so that the appropriate sound is played every time the state changes.
+- When you run your code, you should hear the sound effect every time the app switches to work state, rest state or finishes.

@@ -12,12 +12,15 @@ const tick = () => {
 const changeState = () => {
     if (state === 'work') {
         state = 'rest'
+        audio.restBell.play()
     } else {
         state = 'work'
         index = index + 1
         if (index === times.length) {
+            audio.applause.play()
             return stopTimer()
         }
+        audio.workBell.play()
     }
     time = times[index][state]
     update('state')
