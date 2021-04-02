@@ -208,3 +208,9 @@ If you are doing longer workout, it'd be handy to know what the current exercise
 - Add a div to the html file that will hold the name of the current exercise.
 - Whenever the exercise changes, update the exercise div's contents.
 - When you run the app, you should always see which exercise is the current one.
+
+### Stage 2.10 - Make it spiffy
+When you start the exercise, it would be nice if there'd be a few seconds to orient yourself before starting the workout. And after the workout, you don't really need the last rest, so there should be exceptions to these cases. 
+
+- Our app will have four states: countdown, work, rest, and ready. Start by creating a new constant object, 'states', which will have these four fields, and a corresponding text value that you wish to show in the screen.
+- In our app we have used strings to identify the states. Use the new states object instead.

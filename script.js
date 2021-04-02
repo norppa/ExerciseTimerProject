@@ -2,7 +2,7 @@ const tick = () => {
     time = time - 1
     if (time === 0) {
         changeState()
-        if (state === 'finished') {
+        if (state === states.ready) {
             return
         }
     }
@@ -10,12 +10,14 @@ const tick = () => {
 }
 
 const changeState = () => {
-    if (state === 'work') {
-        state = 'rest'
+    if (state === states.work) {
+        state = states.rest
+        time = exercises[index].rest
         audio.restBell.play()
     } else {
-        state = 'work'
+        state = states.work
         index = index + 1
+        time = exercises[index].work
         update('exercise')
         if (index === exercises.length - 1) {
             audio.applause.play()
@@ -23,7 +25,7 @@ const changeState = () => {
         }
         audio.workBell.play()
     }
-    time = exercises[index][state]
+    
     update('state')
 }
 
@@ -53,7 +55,7 @@ const handlePauseResumeClick = () => isPaused ? resumeTimer() : pauseTimer()
 const startTimer = () => {
     index = 0
     time = exercises[index].work
-    state = 'work'
+    state = states.work
     update('time')
     update('state')
     update('exercise')
@@ -69,7 +71,7 @@ const stopTimer = () => {
     clearInterval(timer)
     isRunning = false
     isPaused = false
-    state = 'finished'
+    state = states.ready
     startStopBtn.innerHTML = 'RESTART'
     pauseResumeBtn.disabled = true
     update('time')

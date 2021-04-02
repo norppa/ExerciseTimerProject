@@ -9,3 +9,10 @@ const audio = {
     workBell: new Audio('./sound/single_bell.mp3'),
     restBell: new Audio('./sound/triple_bell.mp3'),
 }
+
+const states = {
+    countdown: 'Get Ready',
+    work: 'Work',
+    rest: 'Rest',
+    ready: 'Finished!'
+}
